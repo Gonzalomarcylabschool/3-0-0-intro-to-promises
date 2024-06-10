@@ -1,7 +1,7 @@
 const asyncAction = () => new Promise((resolve, reject) => {
   setTimeout(() => {
     const random = Math.random();
-    if (random > 0.5) {
+    if (random > 0.5) {// look here
       resolve(random); // this value will be passed to the .then() callback
     } else {
       reject(new Error(random)); // this value will be passed to the .catch() callback
@@ -9,7 +9,7 @@ const asyncAction = () => new Promise((resolve, reject) => {
   }, 500);
 }); 
 
-myFirstPromise = asyncAction();
+const myFirstPromise = asyncAction();
 
 myFirstPromise
   .then((data) => { // executes if `resolve()` was invoked
