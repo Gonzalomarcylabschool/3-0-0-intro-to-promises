@@ -1,6 +1,6 @@
 # Promises
 
-**Table of Contents**
+Table of Contents
 
 - [Sync vs. Async](#sync-vs-async)
 - [So… what next? Callbacks](#so-what-next-callbacks)
@@ -11,6 +11,10 @@
 	- [Best Practice: Reject with an Error](#best-practice-reject-with-an-error)
 	- [Chaining Promises](#chaining-promises)
 - [Coming up...](#coming-up)
+
+Resources:
+[Javascript Runtime: JS Engine, Event Loop, Call Stack, Execution Contexts, Heap, and Queues](https://itnext.io/javascript-runtime-js-engine-event-loop-call-stack-execution-contexts-heap-and-queues-4826d064ad76)
+[How to Understand Callbacks & Higher Order Functions](https://youtu.be/viQz4nUUnpw?feature=shared)
 
 ## Sync vs. Async
 
