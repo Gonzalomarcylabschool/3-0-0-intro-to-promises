@@ -1,10 +1,8 @@
-// We want to be able to change the number inside of the box to reflect 
-// the number of times the box has hit the right wall.
-
 const box = document.querySelector('#box');
 let x = 0;
 let direction = 1;
-let speed = 5;
+let speed = 20;
+let count = 0;
 
 const update = () => {
   // move the box
@@ -14,6 +12,10 @@ const update = () => {
   // check for hitting the walls
   if (x > document.body.clientWidth) {
     direction = -1;
+    count++;
+    console.log('hit right wall');
+    console.log(count);
+    document.querySelector('#box').innerText = count;
   }
   if (x < 0) {
     direction = 1;
