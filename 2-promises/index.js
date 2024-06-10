@@ -1,20 +1,20 @@
-// This function makes a promise and returns it.
-const asyncAction = () => {
-  const promise = new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve("Success!"); // resolve after 500ms
-    }, 500);
-  });
+const asyncAction = () => new Promise((resolve, reject) => {
+  setTimeout(() => {
+    const random = Math.random();
+    if (random > 0.5) {
+      resolve(random); // this value will be passed to the .then() callback
+    } else {
+      reject(new Error(random)); // this value will be passed to the .catch() callback
+    }
+  }, 500);
+}); 
 
-  return promise;
-}
+myFirstPromise = asyncAction();
 
-// "consume" the promise
-const myFirstPromise = asyncAction();
-
-// schedule a callback to execute when the promise resolves
-myFirstPromise.then((successMessage) => {
-  console.log(`Fulfilled! ${successMessage}`);
-});
-
-console.log("when does this happen?");
+myFirstPromise
+  .then((data) => { // executes if `resolve()` was invoked
+    console.log(`Fulfilled! ${data}`)
+  })
+  .catch((error) => { // executes if `reject()` was invoked
+    console.error(`Rejected :( ${error.message}`)
+  })
